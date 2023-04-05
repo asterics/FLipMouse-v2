@@ -1,6 +1,6 @@
-# FLipMouse - Finger & Lip Mouse
+# FLipMouse V2 - Finger & Lip Mouse
 
-**User Manual v3.1, AsTeRICS Foundation**
+**User Manual v2.12, AsTeRICS Foundation**
 
 
 
@@ -15,6 +15,8 @@ ____
 # Preface
 
 The FLipMouse is an open source Assistive Technology module which is developed at the [University of Applied Sciences Technikum Wien](https://www.technikum-wien.at) and delivered as a DIY-construction kit by the [AsTeRICS Foundation](https://asterics-foundation.org). The FLipMouse allows people who cannot use standard computer input devices to control a computer mouse cursor or a joystick as well as typing desired keyboard keys or using infrared remote controls. The FLipMouse device can be actuated with minimal finger- or lip-movements and/or sip & puff activities via a dedicated mouthpiece.
+
+(**Important:** This documentation refers to Version V2 of the FLipMouse, the new Version V3 is described here: [FLipmouse V3](https://github.com/asterics/FLipMouse) )
 
 The FLipMouse can be configured via a web-based configuration application which is called *configuration manager* from now on. It can be found at the website [flipmouse.asterics.eu](https://flipmouse.asterics.eu/index_fm.htm). This user manual includes a description of the configuration manager and explains how to use  the different functions and features of the FLipMouse. The FLipMouse can be used on any Windows-, Mac- or Linux-computer without installation of special software, because it behaves like a standard mouse / joystick / keyboard device. By using the optional Bluetooth Add-On module, smart phones or tablet computers can be controlled - which will also be explained in this manual. 
 

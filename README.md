@@ -1,4 +1,7 @@
-# FLipMouse
+# FLipMouse V2
+
+
+**Important:** This documentation refers to Version V2 of the FLipMouse, the new Version V3 is described here: [FLipmouse V3](https://github.com/asterics/FLipMouse).
 
 The FLipMouse (a.k.a. Finger- and Lipmouse) is a replacement for a normal PC mouse / keyboard / joystick. 
 Instead of moving the mouse device with your hand and clicking with your fingers, the FlipMouse can be controlled by applying very low forces to the mouthpiece (joystick) with your lips, fingers or other body parts.
@@ -7,7 +10,7 @@ All settings and functions of the FlipMouse can be tailored to specific user cap
 Additional features like built-in environmental control via infrared, optional bluetooth-add-on module for controlling smartphones/tablets or complete software-based control of all functions via serial command interface make the FlipMouse one of the most flexible alternative input devices available today.
 
 
-![Fully euqipped FLipmouse with 2 external buttons attached. Mounted on Manfrotto mount](/img/FLipmouse2.jpg)
+![FLipmouse V2 mounted on Manfrotto Arm](/img/FLipmouse2.jpg)
 
 The FlipMouse might be used as a full replacement of standard computer input devices and can also be used for accessing smartphones or tablets (via the standard HID support or accessibility features).
 It can be useful for people with motor disablities, computer gamers, musicians or people who want a hands-free computer access for other purposes.
@@ -54,13 +57,17 @@ More Information can be found in the user manual:
 
 ## Building the firmware
 In order to build the firmware following prerequisites and dependencies must be installed:
-* the [Arduino IDE](https://www.arduino.cc/en/software)
+* the [Arduino IDE](https://www.arduino.cc/en/software) - use either IDE1 version 1.8.x or IDE2 verison 2.0.x
 * the [Teensyduino](https://www.pjrc.com/teensy/td_download.html) add-on (must be compatible with the Arduino IDE version)
 * the [SSD1306Ascii](https://github.com/greiman/SSD1306Ascii) library by Bill Greiman (can be installed using Arduino IDE's library manager)
-* in the header file WireKinetis.h (Teensy Wire-library implemenation), uncomment [this line](https://github.com/PaulStoffregen/Wire/blob/2499ec67c2128629ee33697804f8650180293597/WireKinetis.h#L50), which is needed to implement the Wire1 interface. The file is located in an Arduino IDE installation subfolder, e.g.
-`arduino-1.8.13/hardware/teensy/avr/libraries/Wire/WireKinetis.h`. On the Mac you might find the file here:
-`/Applications/Teensyduino.app/Contents/Java/hardware/teensy/avr/libraries/Wire/WireKinetis.h`
-* select the *board* 'Teensy LC' in the Arduino IDE tools menu, and the *USB-type* "Serial+Keyboard+Mouse+Joystick"
+* **important:** in the header file WireKinetis.h (Teensy Wire-library implemenation), *uncomment* the line `//#define WIRE_IMPLEMENT_WIRE1` - should be line number 50, see [here](https://github.com/PaulStoffregen/Wire/blob/2499ec67c2128629ee33697804f8650180293597/WireKinetis.h#L50). 
+(This is needed to implement the Wire1 interface, which is disabled by default for the TeensyLC microcontroller in order to save memory.) 
+  * If you are using a 1.8.x IDE version under Windows, the file is located inside a subfolder of the Arduino IDE installation, e.g.
+`C:/Program Files (x86)/Arduino-1.8.19/hardware/teensy/avr/libraries/Wire/WireKinetis.h` 
+  * If you are using a 2.0.x IDE version under Windows, the file is located inside a subfolder of Application Data, e.g.
+`C:/Users/<YourName>/AppData/Local/Arduino15/packages/teensy/hardware/avr/1.58.0/libraries/Wire/WireKinetis.h`
+* select the *board* 'Teensy LC' in the Arduino IDE tools menu
+* select the *USB-type* 'Serial+Keyboard+Mouse+Joystick'  in the Arduino IDE tools menu
 * select the correct *Port* after connecting the TeensyLC to your system
 * compile and upload the firmware 
 
