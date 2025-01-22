@@ -295,10 +295,10 @@ void acceleratedMouseMove(float accelFactor) {
   static float accumXpos = 0;
   static float accumYpos = 0;
 
-  float moveValX = sensorData.x * (float)slotSettings.ax * accelFactor;
-  float moveValY = sensorData.y * (float)slotSettings.ay * accelFactor;
+  float moveValX = sensorData.x * (float)slotSettings.ax *0.0002;// * accelFactor;
+  float moveValY = sensorData.y * (float)slotSettings.ay *0.0002;// * accelFactor;
   float actSpeed =  __ieee754_sqrtf (moveValX * moveValX + moveValY * moveValY);
-  float max_speed = (float)slotSettings.ms / 10.0f;
+  float max_speed = (float)slotSettings.ms / 7.0f;
 
   if (actSpeed > max_speed) {
     moveValX *= (max_speed / actSpeed);
